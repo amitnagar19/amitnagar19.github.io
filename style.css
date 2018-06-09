@@ -1,0 +1,101 @@
+.wrapper{
+	width:90%;
+	margin: 5% 20% 5% 20%;
+	
+	padding-left: 1%;
+	padding-top: 1%;
+	padding-right: 1%;
+	
+}
+
+
+body {
+	font-family: "Times New Roman", Times, serif;
+	background-color: #A0A0A0;
+	font-size:0.9em;
+	line-height: 17pt;
+}
+
+
+.row {
+    display: flex;
+    background-color: grey;
+}
+
+.column {
+    flex: 33.33%;
+    padding: 5px;
+}
+
+.leftcontainer{
+	float: left;
+	width: 30%;
+	
+	background-color: #D8D8D8;
+	
+	padding-left: 8%;
+	padding-top: 1%;
+
+
+	
+}
+
+.rightcontainer{
+	float: left;
+	width: 70%;
+	
+	padding-left: 2%;
+	padding-right: 1%;
+	padding-bottom: 1%;
+	padding-top: 1%
+}
+
+.subcontent{
+	float: left;
+	width: 30%;
+	padding-left: 8%;
+	padding-top: 1%
+	background-color:#D8D8D8;
+}
+
+.maincontent{
+	float:left;
+	width:70%;
+	padding-top: 1%;
+	padding-left:1%;  
+	background-color: tomato;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.minicontainer{
+	width: 70%;
+	padding-top: 1%
+}
+
+img{
+	
+	 border-radius: 50%;
+
+}
+
+p.sansserif {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer{
+	background-color: black;
+}
+
+html{min-height:100%;position:relative;}
+
+@media screen and (max-width:800px) {
+  .leftcontainer, .rightcontainer, .subcontent {
+    width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
