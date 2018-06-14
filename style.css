@@ -98,4 +98,7 @@ html{min-height:100%;position:relative;}
   .leftcontainer, .rightcontainer, .subcontent {
     width:100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
+  img{
+  	width: 35%;
+  }
 }
