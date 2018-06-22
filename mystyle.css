@@ -527,7 +527,7 @@ hr{
 
 
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:800px) {
    .rightcontainer  {
     width:100%; /* The width is 100%, when the viewport is 800px or smaller */
     z-index: -1;
