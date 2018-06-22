@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+<link rel="icon" type="image/png" sizes="32x32" href="cvphoto2.jpg">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https:////cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<script>
+  $(function() {
+    
+    var $meters = $(".meter > span");
+    var $section = $('.third');
+    var $queue = $({});
+    
+    function loadDaBars() {
+        $meters.each(function() {
+            var $el = $(this);
+            var origWidth = $el.width();
+            $el.width(0);
+            $queue.queue(function(next) {
+                $el.animate({width: origWidth}, 300, next);
+            });
+        });
+    }
+    
+    $(document).bind('scroll', function(ev) {
+        var scrollOffset = $(document).scrollTop();
+        var containerOffset = $section.offset().top - window.innerHeight;
+        if (scrollOffset > containerOffset) {
+            loadDaBars();
+            // unbind event not to load scrolsl again
+            $(document).unbind('scroll');
+        }
+    });
+    
+});
+
+</script>
+<script >
+  
+
+  $(document).ready(function ($) {
+    function animateElements() {
+      $('.progressbar').each(function () {
+        var elementPos = $(this).offset().top;
+        var topOfWindow = $(window).scrollTop();
+        var percent = $(this).find('.circle').attr('data-percent');
+        var percentage = parseInt(percent, 10) / parseInt(100, 10);
+        var animate = $(this).data('animate');
+        if (elementPos < topOfWindow + $(window).height() - 30 && !animate) {
+          $(this).data('animate', true);
+          $(this).find('.circle').circleProgress({
+            startAngle: -Math.PI / 2,
+            value: percent / 100,
+            size: 180,
+            thickness: 30,
+            emptyFill: "rgba(0,0,0, .2)",
+            fill: {
+              color: '#3a6bc4'
+            }
+          }).on('circle-animation-progress', function (event, progress, stepValue) {
+            $(this).find('div').text((stepValue*100).toFixed(1) + "%");
+          }).stop();
+        }
+      });
+    }
+
+    // Show animated elements
+    animateElements();
+    $(window).scroll(animateElements);
+    
+    
+    
+
+  }); //end document ready function
+
+</script>
+	<title>Amit Nagar</title>
+</head>
+<body>
+<!-- <div class="leftcontainer"> -->
+
+ <!--  <div class="hamburgericon" onclick="myFunction(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+  </div>
+
+  <img id="img1" src="cvphoto2.jpg" alt="cvphoto" >
+  <div class="mybutton"><a>Start</a></div>
+  <div class="mybutton">Resume</div>
+  <div class="mybutton">Contact</div>
+
+  <div class="socials">
+    <p>social</p>
+  </div> -->
+
+
+<div id="sidebar">
+ <img id="img1" src="cvphoto2.jpg" alt="cvphoto" > 
+  <ul >
+    <li><span><i class="fa fa-home"></i></span>&nbsp<span><a href="#start"  style="text-decoration: none;">Start&nbsp&nbsp</a>
+    </li>
+    </span>
+    <li><span><i class="fa fa-file-text"></i></span>&nbsp<span><a href="#resume"  style="text-decoration: none;">Resume</a></li>
+    </span>
+    
+    <li><span><i class="fa fa-envelope"></i></span>&nbsp<span><a href="#contact"  style="text-decoration: none;">Contact</a></span></li>
+  </ul>
+
+  <div class="socialcontainer">
+    <span class="socials" id="facebook"><a href=""><i class="fa fa-facebook" ></i></a></span>
+    <span class="socials" id="instagram"><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram">
+     </i> </a></span>
+    <span class="socials" id="linkedin"><a href="https://www.linkedin.com/in/amit-nagar-01921a8a/"><i class="fa fa-linkedin">
+       </i></a></span>
+  </div>
+
+</div>
+<div id="toggle-btn" onclick="toggleSidebar(this)">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+
+
+
+
+<!-- </div> -->
+
+<div class="rightcontainer" id="start">
+<div class="imagecontainer">
+  <img src="backgroundimage.jpg" alt="background" width="100%" style="opacity:0.8; background-color:rgba(0, 0, 0, 0.5);">
+<div class="top-left" id="font1"><i style="font-family:American Typewriter, serif">Hi! I'm</i> Amit Nagar
+<p>
+  <a href="" class="typewrite" style="text-decoration: none;font-size: 30px;" data-period="2000" data-type='[ "Frontend Developer.", "Website Designer.", "Desktop Application .","IoT Enthusiast ." ]'>
+    <span class="wrap"></span>
+  </a>
+</p>
+</div>
+  </div>
+
+<div class="intro">
+  <p>I am a computer science student at University of Passau, with experience in  Application  development. I am well versed in latest technologies of Application development and familiar with programming in Javascript, TypeScript, NodeJs , .NET, Python and have good knowledge of HTML and CSS as well. I am looking for opportunities in related fields.</p>
+</div>
+
+    <div class="intro"><p style="font-family: Didot, serif;color: black"><b>Language Skills</b></p>
+
+    <div>
+      <div class="minicontainer" id="resume">
+     
+          <div class="progressbar" data-animate="false">
+                  <div class="circle" data-percent="25">
+                    <div></div>
+                    <h3>German</h3>
+                  </div>
+           </div>
+      </div>     
+      <div class="minicontainer">
+          <div class="progressbar" data-animate="false">
+                  <div class="circle" data-percent="90">
+                    <div></div>
+                    <h3>English</h3>
+                  </div>
+          </div>
+      </div> 
+
+
+
+      <div class="minicontainer">
+          <div class="progressbar" data-animate="false">
+                  <div class="circle" data-percent="100">
+                    <div></div>
+                    <h3>Hindi</h3>
+                  </div>
+          </div>
+      </div>       
+
+
+
+    </div>
+      <div class="col-container">
+      <div class="col" >
+      <h3 style="font-family: Didot, serif;color: black">Programming Languages</h3>
+        <section class="third">
+
+            <div class="meter">
+              <span style="width: 80%">80%</span>
+            </div>
+             <h3 class="myfont">HTML/CSS</h3>  
+
+            <div class="meter">
+              <span style="width: 80%">80%</span>
+            </div>
+            <h3 class="myfont">JavaScript</h3>
+
+
+            <div class="meter">
+              <span style="width: 70%">70%</span>
+            </div>
+            <h3 class="myfont">TypeScript</h3>
+
+
+            <div class="meter">
+              <span style="width: 80%">80%</span>
+            </div>
+            <h3 class="myfont">C#</h3>
+
+
+            <div class="meter">
+              <span style="width: 60%">60%</span>
+            </div>
+            <h3 class="myfont">Python</h3>
+
+            <div class="meter">
+              <span style="width: 60%">60%</span>
+            </div>
+            <h3 class="myfont">Lua</h3>
+
+            <div class="meter">
+              <span style="width: 50%">50%</span>
+            </div>
+            <h3 class="myfont">Java</h3>
+
+            <div class="meter">
+              <span style="width: 70%">70%</span>
+            </div>
+            <h3 class="myfont">C/C++</h3>
+
+            
+
+      </section>
+      </div>
+
+     <div class="col" >
+      <h3 style="font-family: Didot, serif;color: black">Frameworks</h3>
+        <section>
+          <div class="meter">
+              <span style="width: 85%">85%</span>
+            </div>
+            <h3 class="myfont">NodeJs</h3>
+
+            <div class="meter">
+              <span style="width: 80%">80%</span>
+            </div>
+            <h3 class="myfont">.NET</h3>
+
+            <div class="meter">
+              <span style="width: 60%">60%</span>
+            </div>
+            <h3 class="myfont">ExpressJs</h3>
+            <br>
+            <h3 style="font-family: Didot, serif;color: black">Databases</h3>
+             <div class="meter">
+              <span style="width: 85%">85%</span>
+            </div>
+            <h3 class="myfont">MIcrosoft SQL Server</h3>
+
+            <div class="meter">
+              <span style="width: 80%">80%</span>
+            </div>
+            <h3 class="myfont">My SQL</h3>
+
+            <div class="meter">
+              <span style="width: 60%">60%</span>
+            </div>
+            <h3 class="myfont">MongoDB</h3>
+
+            <div class="meter">
+              <span style="width: 60%">60%</span>
+            </div>
+            <h3 class="myfont">MS Access</h3>
+
+        </section>
+      </div>
+
+    </div>
+
+    <div class="container1">
+     <h3 style="font-family: Didot, serif;color: black">Education &amp Jobs</h3> 
+            <ul class="timeline">
+    <li>
+        <div class="timeline-badge">
+          <a><i class="fa fa-circle" id="" style="color: #3a6bc4"></i></a>
+        </div>
+        <div class="timeline-panel">
+            <div class="timeline-heading">
+                <h4>Master Informatik</h4>
+            </div>
+            <div class="timeline-body">
+                <p><b>University of Passau.</b></p>
+            </div>
+            <div class="timeline-footer">
+                <p class="text-right">10/2015-Present</p>
+            </div>
+        </div>
+    </li>
+    
+    <li class="timeline-inverted">
+        <div class="timeline-badge">
+            <a><i class="fa fa-circle invert" id="" style="color: #3a6bc4"></i></a>
+        </div>
+        <div class="timeline-panel">
+            <div class="timeline-heading">
+                <h4>Master Thesis  </h4>
+            </div>
+            <div class="timeline-body">
+                <p>Siemens AG, Munich</p>
+            </div>
+            <div class="timeline-footer">
+                <p class="text-right">08/2017-04/2018</p>
+            </div>
+        </div>
+    </li>
+    
+    <li>
+        <div class="timeline-badge">
+            <a><i class="fa fa-circle" id="" style="color: #3a6bc4"></i></a>
+        </div>
+        <div class="timeline-panel">
+            <div class="timeline-heading">
+                <h4>Work Student </h4>
+            </div>
+            <div class="timeline-body">
+                <p>Siemens AG, Munich</p>
+            </div>
+            <div class="timeline-footer">
+                <p class="text-right">06/2016 – 08/2017</p>
+            </div>
+        </div>
+    </li>
+    
+    <li class="timeline-inverted">
+        <div class="timeline-badge">
+            <a><i class="fa fa-circle invert" id="" style="color: #3a6bc4"></i></a>
+        </div>
+        <div class="timeline-panel">
+            <div class="timeline-heading">
+                <h4>Internship</h4>
+            </div>
+            <div class="timeline-body">
+                <p> Farsight I.T Solutions, India </p>
+            </div>
+            <div class="timeline-footer">
+                <p class="text-right">08/2014 – 02/2015</p>
+            </div>
+        </div>
+    </li>
+    
+    <li>
+        <div class="timeline-badge">
+            <a><i class="fa fa-circle" id="" style="color: #3a6bc4"></i></a>
+        </div>
+        <div class="timeline-panel">
+            <div class="timeline-heading">
+                <h4>Bachelor, Information Technology</h4>
+            </div>
+            <div class="timeline-body">
+                <p> Maharishi Dayanand University(India)</p>
+            </div>
+            <div class="timeline-footer">
+                <p class="text-right">2010-2014</p>
+            </div>
+        </div>
+    </li>
+    
+    
+    <li class="clearfix no-float"></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+<div class="contact" id="contact">
+<div class="innercontainer">
+ <h3 style="font-family: Apple Chancery, cursive;font-weight: 500px;text-align: center;font-size: 30px">Get in Touch!</h3>
+      
+          <!-- <img src="cvphoto2.jpg" alt="Person" width="96" height="96" id="chipimage"> -->
+    <div class="contactinfo"> Name: Amit Nagar</div>
+    <div class="contactinfo"><span><i class="fa fa-envelope"></i></span>&nbsp<span><a href="#start"  style="text-decoration: none;">amitnagar19@gmail.com</a>
+    </div>
+    <div class="contactinfo"><span><i class="fa fa-home"></i></span>&nbsp<span><a href="#start"  style="text-decoration: none;">Passau, Germany</a>
+    </div>
+      
+
+
+</div>
+</div>
+
+
+
+
+<!-- https://codepen.io/jimboobrien/pen/dGzVKr
+http://jsfiddle.net/rAQev/165/ -->
+<script>
+function myFunction(x) {
+    x.classList.toggle("change");
+}
+
+
+function toggleSidebar(ref) {
+  ref.classList.toggle('active');
+  document.getElementById('sidebar').classList.toggle('active');
+}
+
+
+
+</script>
+<script>
+  $('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+</script>
+<script type="text/javascript">
+   var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+</script>
+</body>
+</html>
