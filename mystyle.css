@@ -645,6 +645,10 @@ ul.timeline:before {
 
     /*timeline ends*/
 
-  
+  .top-left {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+}
 
 }
