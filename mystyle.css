@@ -289,7 +289,7 @@ hr{
 .minicontainer{
 	width: 33.33%;
 	float:left;
-
+  outline: none;
 
 }
 
@@ -310,10 +310,11 @@ hr{
 	box-shadow: 10px 10px 5px #aaaaaa;
 	color: white;
 	font-weight: 700;
+	height: auto;
 }
 
 .contactinfo{
-	font-size: 20px;
+	font-size: 1.2em;
 	float: left;
 	margin: 10px 20px 10px 20px;
 
@@ -645,10 +646,15 @@ ul.timeline:before {
 
     /*timeline ends*/
 
-  .top-left {
+.top-left {
     position: absolute;
     top: 15%;
     left: 10%;
 }
+
+.contact{
+  height: 270px;
+}
+  
 
 }
